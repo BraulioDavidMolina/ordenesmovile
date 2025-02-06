@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-card-header color="danger">
+    <ion-card-title class="ion-text-center">Borrar Registro</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="ion-text-center">
+    <ion-card-title class="ion-text-center">Se borrara el siguiente registro</ion-card-title>
+    <h1>{{id}}</h1>
+    <ion-button color="warning" (click)="close()">Cancelar</ion-button>
+    <ion-button color="danger" (click)="confirmDelete(id)">Eliminar</ion-button>
+  </ion-card-content>
+
+</ion-card>
+

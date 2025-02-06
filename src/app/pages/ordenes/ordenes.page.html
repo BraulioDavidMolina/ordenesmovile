@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-back-button 
+    slot="start" 
+    defaultHref="/home"
+    color="primary">
+    </ion-back-button>
+
+
+    <ion-title class="ion-text-capitalize">ordenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ordenes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card *ngFor="let orden of ordenes">
+    <ion-card-title class="ion-text-center">Numero: {{orden.numero}}</ion-card-title>
+    <ion-card-content class="ion-text-center">
+      <ion-card-subtitle color="danger">
+        <h2 *ngIf="orden.fechaAtencion">
+          Fecha de atencion:  {{orden.fechaAtencion }} 
+        </h2> 
+        </ion-card-subtitle>
+      <ion-card-subtitle color="success">
+        <h2>
+          Fecha de creacion: {{orden.created.toDate() | date: 'dd/MM/yyyy'}}
+        </h2>
+        </ion-card-subtitle>
+    <ion-button color="success" (click)="verDetalle(orden.id)">Detalles</ion-button>
+    <ion-button color="danger" (click)="deleteOrden(orden.id)">Eliminar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="makeOrden()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<form [formGroup]="ordenForm">
+
+  <!--  -->
+  <ion-card>
+  <ion-card-header color="primary">
+    <ion-card-title>Alta de orden</ion-card-title>
+    <ion-card-subtitle>LLena todos los campos</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+      <ion-list>
+
+      <ion-item>
+        <ion-input required formControlName="numero" label="Numero orden" type="number" placeholder="000"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input required formControlName="descripcion" label="Descripcion" type="text" placeholder="Descripcion"></ion-input>
+      </ion-item>
+
+      <ion-card-subtitle class="ion-text-center">Fecha de atencion</ion-card-subtitle>
+      <ion-item>
+        <ion-datetime required formControlName="fechaAtencion"  presentation="date" [showDefaultButtons]="false"></ion-datetime>
+      </ion-item>
+
+      </ion-list>
+    </ion-list>
+    <ion-button class="bn-pading" color="danger" (click)="close()">Cancelar</ion-button>
+    <ion-button class="bn-pading" color="success" (click)="saveOrden()">Guardar</ion-button>
+    
+  </ion-card-content>
+
+</ion-card>
+</form>
